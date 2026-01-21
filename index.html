@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Aula 47: Inglês com Filmes Famosos</title>
+    <title>Aula 47: Cinema e Fluência – Diálogos e Monólogos Icônicos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -36,12 +36,12 @@
             font-size: 1.5rem;
             margin-bottom: 25px;
             padding-bottom: 15px;
-            border-bottom: 3px solid #3498db;
+            border-bottom: 3px solid #e74c3c; /* Vermelho Cinema */
             line-height: 1.3;
         }
         
         h2, h3, h4 { color: #2c3e50; margin-top: 25px; }
-        h3 { color: #34495e; font-size: 1.25rem; border-left: 4px solid #3498db; padding-left: 10px; }
+        h3 { color: #34495e; font-size: 1.25rem; border-left: 4px solid #e74c3c; padding-left: 10px; }
         h4 { color: #c0392b; font-size: 1.1rem; margin-bottom: 10px; }
         
         p, li { font-size: 1rem; margin-bottom: 10px; }
@@ -50,80 +50,88 @@
         .emoji-small { font-size: 1.2rem; }
 
         /* --- DESTAQUES E CAIXAS --- */
-        .theme-intro, .nota-gramatical, .nota-dica, .secao-exercicios, .extra-task {
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-            border-left: 5px solid transparent;
-        }
+        .theme-intro { background-color: #fdedec; border-left: 5px solid #e74c3c; padding: 15px; margin: 15px 0; border-radius: 8px; }
+        .nota-gramatical { background-color: #ecf0f1; border-left: 5px solid #f39c12; padding: 15px; margin: 15px 0; border-radius: 8px; }
 
-        .theme-intro { background-color: #eaf2f8; border-left-color: #3498db; }
-        .nota-gramatical { background-color: #ecf0f1; border-left-color: #f39c12; }
-        .nota-dica { background-color: #e8f6f3; border-left-color: #16a085; }
-        .extra-task { background-color: #f5eef8; border-left-color: #9b59b6; }
-        .secao-exercicios { background-color: #fff8e1; border-left-color: #f39c12; }
-        .movie-recommendations { background-color: #fdf2e9; border-left-color: #e67e22; }
-
-        .example-word { color: #2980b9; font-weight: 700; }
+        .example-word { color: #e74c3c; font-weight: 700; }
         
         /* --- ESTILOS DE FILME (CARDS) --- */
         .movie-card {
             background: white;
             border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-            border-left: 4px solid #1abc9c; /* Verde água para filmes */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .movie-card::before {
+            content: "🎬";
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            font-size: 1.5rem;
         }
 
         .movie-title {
             font-weight: 700;
-            color: #16a085;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+            color: #c0392b;
+            font-size: 1.2rem;
             display: block;
-            border-bottom: 1px dashed #eee;
-            padding-bottom: 5px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f2f2f2;
+            padding-bottom: 8px;
         }
 
-        .quote-box {
+        .dialogue-container {
             background-color: #f9f9f9;
-            border-left: 3px solid #ccc;
-            padding: 10px;
+            border-radius: 8px;
+            padding: 15px;
             margin: 10px 0;
-            font-style: italic;
-            font-size: 1.05rem;
-            color: #444;
-            position: relative;
         }
 
-        .translation-box {
-            font-size: 0.95rem;
+        .speaker {
+            font-weight: 700;
+            color: #2980b9;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .english-text {
+            display: block;
+            font-size: 1.05rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .portuguese-translation {
+            display: block;
+            font-size: 0.9rem;
             color: #7f8c8d;
-            margin-top: 8px;
+            font-style: italic;
+            margin-bottom: 15px;
         }
 
         .learning-tip {
             background-color: #e8f6f3;
             border-radius: 6px;
-            padding: 10px;
-            margin-top: 12px;
+            padding: 12px;
+            margin-top: 15px;
             font-size: 0.9rem;
+            border: 1px solid #d1f2eb;
         }
 
         .learning-tip h5 {
             margin: 0 0 5px 0;
             color: #16a085;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
-        .learning-tip ul {
-            padding-left: 20px;
-            margin: 0;
-        }
-
-        /* --- BOTÃO DE NAVEGAÇÃO --- */
+        /* --- BOTÕES --- */
         .nav-btn {
             display: block;
             width: 100%;
@@ -141,482 +149,149 @@
         }
         .nav-btn:hover { background-color: #2c3e50; }
 
-        /* --- BOTÕES DE ÁUDIO --- */
-        .audio-btn-inline {
-            background: none;
+        .audio-btn-card {
+            background-color: #e74c3c;
+            color: white;
             border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 1.2rem;
-            vertical-align: middle;
-            margin-left: 5px;
-            padding: 0 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            transition: opacity 0.2s;
         }
+        .audio-btn-card:active { opacity: 0.8; }
 
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 600px) {
+            .container { padding: 15px 10px; }
+            h1 { font-size: 1.3rem; }
+            .english-text { font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <!-- Botão Navegação Topo -->
-        <a href="https://espaco-liberdade.github.io/inglesipa/" class="nav-btn">⬅ Voltar ao Menu</a>
+        <a href="https://espaco-liberdade.github.io/inglesipa/" class="nav-btn">⬅ Voltar ao Menu Principal</a>
 
-        <h1>Aula 47: Inglês com Filmes Famosos <span class="emoji-large">🎬🍿</span><br><span style="font-size: 0.8em; font-weight: normal;">(English with Famous Movies)</span></h1>
+        <h1>Aula 47: Cinema e Fluência – Diálogos e Monólogos <span class="emoji-large">🍿🎞️</span></h1>
 
         <div class="theme-intro">
             <p>Bem-vindo(a) à Aula 47! <span class="emoji-small">✨</span></p>
-            <p><strong>Objetivo:</strong> Nesta aula especial, vamos usar a magia do cinema para aprimorar seu inglês! Analisaremos <strong>30 diálogos e frases icônicas de filmes famosos</strong> para aprender expressões, entender a entonação, o contexto cultural e, claro, nos divertirmos no processo. Assistir a filmes é uma das melhores maneiras de melhorar sua audição (listening) e se familiarizar com a língua falada de forma natural. Prepare-se para uma imersão cinematográfica! <span class="emoji-small">🎞️🗣️🌍</span></p>
+            <p>Esqueça as frases de uma linha. Agora que você está no nível intermediário, vamos analisar <strong>trechos longos e monólogos reais</strong> que exigem compreensão de contexto, entonação e gramática avançada. Analisaremos clássicos que moldaram a cultura de língua inglesa. Prepare o seu <em>listening</em>! <span class="emoji-small">🎧🎬</span></p>
         </div>
 
-        <h2>47.1 Aprendendo com a Sétima Arte: 30 Frases e Diálogos Icônicos</h2>
-        <p>Abaixo estão cenas clássicas com suas traduções e dicas de aprendizagem. Toque no ícone 🔊 para ouvir a frase original.</p>
+        <h3>47.1 Imersão Profunda em Diálogos Reais</h3>
 
-        <!-- Movie 1 -->
+        <!-- Movie Card 1: Shawshank Redemption -->
         <div class="movie-card">
-            <span class="movie-title">1. O Exterminador do Futuro (The Terminator, 1984)</span>
-            <div class="quote-box">
-                "I<span class="example-word">'ll be back</span>."
-                <button class="audio-btn-inline" onclick="playAudio('I\'ll be back.')">🔊</button>
+            <span class="movie-title">1. Um Sonho de Liberdade (The Shawshank Redemption, 1994)</span>
+            <div class="dialogue-container">
+                <span class="speaker">Andy Dufresne:</span>
+                <span class="english-text" id="text1">"Remember Red, hope is a good thing, maybe the best of things, and no good thing ever dies. I will be hoping that this letter finds you, and finds you well."</span>
+                <span class="portuguese-translation">"Lembre-se Red, a esperança é uma coisa boa, talvez a melhor das coisas, e nenhuma coisa boa jamais morre. Eu estarei esperando que esta carta te encontre, e te encontre bem."</span>
+                
+                <button class="audio-btn-card" onclick="playAudio(document.getElementById('text1').innerText)">
+                    <span>Ouvir Monólogo</span> 🔊
+                </button>
             </div>
-            <div class="translation-box">"Eu voltarei."</div>
             <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Future with 'will' (Aula 11):</strong> <code>I'll</code> é a contração de "I will". Aqui, é usado para fazer uma promessa ou uma ameaça, um dos usos clássicos do Future Simple.</li></ul>
+                <h5>Dica de Análise:</h5>
+                <p><strong>Future Continuous:</strong> <code>I will be hoping</code> (Eu estarei esperando/esperançoso). Andy usa essa estrutura para descrever uma ação contínua que ele manterá no futuro até que a carta seja lida. Relembre a <strong>Aula 41</strong>.</p>
             </div>
         </div>
 
-        <!-- Movie 2 -->
+        <!-- Movie Card 2: Rocky Balboa -->
         <div class="movie-card">
-            <span class="movie-title">2. Star Wars: Uma Nova Esperança (Star Wars: A New Hope, 1977)</span>
-            <div class="quote-box">
-                "May the Force <span class="example-word">be</span> with you."
-                <button class="audio-btn-inline" onclick="playAudio('May the Force be with you.')">🔊</button>
+            <span class="movie-title">2. Rocky Balboa (2006)</span>
+            <div class="dialogue-container">
+                <span class="speaker">Rocky:</span>
+                <span class="english-text" id="text2">"It ain't about how hard you hit. It's about how hard you can get hit and keep moving forward. How much you can take and keep moving forward. That's how winning is done!"</span>
+                <span class="portuguese-translation">"Não é sobre o quão forte você bate. É sobre o quão forte você consegue ser atingido e continuar seguindo em frente. O quanto você aguenta e continua seguindo em frente. É assim que se vence!"</span>
+                
+                <button class="audio-btn-card" onclick="playAudio(document.getElementById('text2').innerText)">
+                    <span>Ouvir Discurso</span> 🔊
+                </button>
             </div>
-            <div class="translation-box">"Que a Força esteja com você."</div>
             <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Modal Verb 'May' (Aula 22):</strong> <code>May</code> é usado aqui para expressar um desejo ou uma esperança, uma função formal e poderosa deste verbo modal.</li></ul>
+                <h5>Dica de Análise:</h5>
+                <p><strong>Passive Voice:</strong> <code>how winning is done</code> (como a vitória é feita/alcançada). O foco aqui é no processo de vencer, não em quem vence. <strong>Gíria:</strong> <code>ain't</code> é uma contração informal para "is not".</p>
             </div>
         </div>
 
-        <!-- Movie 3 -->
+        <!-- Movie Card 3: Pulp Fiction -->
         <div class="movie-card">
-            <span class="movie-title">3. Forrest Gump: O Contador de Histórias (Forrest Gump, 1994)</span>
-            <div class="quote-box">
-                "My momma always said life <span class="example-word">was</span> like a box of chocolates. You never <span class="example-word">know</span> what you're gonna get."
-                <button class="audio-btn-inline" onclick="playAudio('My momma always said life was like a box of chocolates. You never know what you\'re gonna get.')">🔊</button>
+            <span class="movie-title">3. Pulp Fiction (1994)</span>
+            <div class="dialogue-container">
+                <span class="speaker">Jules:</span>
+                <span class="english-text" id="text3">"The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness."</span>
+                <span class="portuguese-translation">"O caminho do homem justo é cercado por todos os lados pelas iniquidades dos egoístas e pela tirania dos homens maus. Abençoado é aquele que, em nome da caridade e da boa vontade, pastoreia os fracos pelo vale das trevas."</span>
+                
+                <button class="audio-btn-card" onclick="playAudio(document.getElementById('text3').innerText)">
+                    <span>Ouvir Texto Denso</span> 🔊
+                </button>
             </div>
-            <div class="translation-box">"Minha mãe sempre dizia: a vida é como uma caixa de chocolates. Você nunca sabe o que vai encontrar."</div>
             <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul>
-                    <li><strong>Reported Speech (Aula 30):</strong> Forrest está relatando o que sua mãe dizia. Note como ele usa o <strong>Past Simple</strong> (<code>was</code>) para falar de um conselho recorrente do passado.</li>
-                    <li><strong>Gíria:</strong> <code>gonna</code> é a contração informal de "going to".</li>
-                </ul>
+                <h5>Dica de Análise:</h5>
+                <p><strong>Vocabulário Avançado:</strong> <code>beset</code> (cercado/atormentado), <code>righteous</code> (justo/íntegro), <code>shepherds</code> (pastoreia - aqui usado como verbo). Este trecho mostra o inglês formal/bíblico adaptado ao cinema.</p>
             </div>
         </div>
 
-        <!-- Movie 4 -->
+        <!-- Movie Card 4: The Lord of the Rings -->
         <div class="movie-card">
-            <span class="movie-title">4. O Mágico de Oz (The Wizard of Oz, 1939)</span>
-            <div class="quote-box">
-                "<span class="example-word">There's</span> no place like home."
-                <button class="audio-btn-inline" onclick="playAudio('There\'s no place like home.')">🔊</button>
+            <span class="movie-title">4. O Senhor dos Anéis (The Fellowship of the Ring, 2001)</span>
+            <div class="dialogue-container">
+                <span class="speaker">Gandalf:</span>
+                <span class="english-text" id="text4">"So do all who live to see such times. But that is not for them to decide. All we have to decide is what to do with the time that is given to us."</span>
+                <span class="portuguese-translation">"Assim como todos os que vivem para ver tais tempos. Mas isso não cabe a eles decidir. Tudo o que temos que decidir é o que fazer com o tempo que nos é dado."</span>
+                
+                <button class="audio-btn-card" onclick="playAudio(document.getElementById('text4').innerText)">
+                    <span>Ouvir Conselho</span> 🔊
+                </button>
             </div>
-            <div class="translation-box">"Não há lugar como o lar."</div>
             <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>There is (Aula 13):</strong> <code>There's</code> é a contração de "There is", usado para indicar a existência (ou, neste caso, a não existência) de algo.</li></ul>
+                <h5>Dica de Análise:</h5>
+                <p><strong>Passive Voice:</strong> <code>time that is given to us</code> (tempo que nos é dado). Note como o inglês usa a voz passiva para dar um tom solene e filosófico.</p>
             </div>
         </div>
 
-        <!-- Movie 5 -->
+        <!-- Movie Card 5: A Few Good Men -->
         <div class="movie-card">
-            <span class="movie-title">5. O Sexto Sentido (The Sixth Sense, 1999)</span>
-            <div class="quote-box">
-                "I <span class="example-word">see</span> dead people."
-                <button class="audio-btn-inline" onclick="playAudio('I see dead people.')">🔊</button>
+            <span class="movie-title">5. Questão de Honra (A Few Good Men, 1992)</span>
+            <div class="dialogue-container">
+                <span class="speaker">Col. Jessup:</span>
+                <span class="english-text" id="text5">"Son, we live in a world that has walls, and those walls have to be guarded by men with guns. You don't want the truth because deep down in places you don't talk about at parties, you want me on that wall! You need me on that wall!"</span>
+                <span class="portuguese-translation">"Filho, vivemos em um mundo que tem muros, e esses muros têm que ser guardados por homens armados. Você não quer a verdade porque, lá no fundo, em lugares que você não comenta em festas, você me quer naquele muro! Você precisa de mim naquele muro!"</span>
+                
+                <button class="audio-btn-card" onclick="playAudio(document.getElementById('text5').innerText)">
+                    <span>Ouvir Confronto</span> 🔊
+                </button>
             </div>
-            <div class="translation-box">"Eu vejo pessoas mortas."</div>
             <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Present Simple (Aula 1):</strong> O verbo <code>see</code> está no Present Simple para expressar um fato ou uma habilidade que o personagem tem no presente.</li></ul>
+                <h5>Dica de Análise:</h5>
+                <p><strong>Relative Clauses (Aula 25):</strong> <code>world that has walls</code> e <code>places you don't talk about</code>. Note como as orações relativas definem exatamente de qual "mundo" e quais "lugares" o personagem está falando.</p>
             </div>
         </div>
 
-        <!-- Movie 6 -->
-        <div class="movie-card">
-            <span class="movie-title">6. Titanic (1997)</span>
-            <div class="quote-box">
-                "I<span class="example-word">'m</span> the king of the world!"
-                <button class="audio-btn-inline" onclick="playAudio('I\'m the king of the world!')">🔊</button>
-            </div>
-            <div class="translation-box">"Eu sou o rei do mundo!"</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Contração (Aula 1):</strong> <code>I'm</code> é a contração de "I am", muito comum na fala para expressar um estado ou identidade no presente.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 7 -->
-        <div class="movie-card">
-            <span class="movie-title">7. Homem-Aranha (Spider-Man, 2002)</span>
-            <div class="quote-box">
-                "With great power <span class="example-word">comes</span> great responsibility."
-                <button class="audio-btn-inline" onclick="playAudio('With great power comes great responsibility.')">🔊</button>
-            </div>
-            <div class="translation-box">"Com grandes poderes vêm grandes responsabilidades."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Present Simple (3ª Pessoa 's'):</strong> O verbo <code>comes</code> tem "-s" porque o sujeito é "great responsibility" (it). É um fato ou provérbio (<strong>Aula 1</strong>).</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 8 -->
-        <div class="movie-card">
-            <span class="movie-title">8. O Poderoso Chefão (The Godfather, 1972)</span>
-            <div class="quote-box">
-                "I<span class="example-word">'m gonna make</span> him an offer he <span class="example-word">can't refuse</span>."
-                <button class="audio-btn-inline" onclick="playAudio('I\'m gonna make him an offer he can\'t refuse.')">🔊</button>
-            </div>
-            <div class="translation-box">"Vou fazer-lhe uma oferta que ele não pode recusar."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul>
-                    <li><strong>Be Going To (Informal):</strong> <code>gonna</code> é a contração de "going to", usada para expressar uma intenção ou plano futuro (<strong>Aula 11</strong>).</li>
-                    <li><strong>Modal Verb 'Can't':</strong> Expressa a impossibilidade ou falta de opção (<strong>Aula 10</strong>).</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Movie 9 -->
-        <div class="movie-card">
-            <span class="movie-title">9. Procurando Nemo (Finding Nemo, 2003)</span>
-            <div class="quote-box">
-                "Just <span class="example-word">keep swimming</span>."
-                <button class="audio-btn-inline" onclick="playAudio('Just keep swimming.')">🔊</button>
-            </div>
-            <div class="translation-box">"Continue a nadar."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Gerúndio após Verbo (Aula 31):</strong> O verbo <code>keep</code> é seguido pelo gerúndio (verbo + -ing) para indicar a continuação de uma ação.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 10 -->
-        <div class="movie-card">
-            <span class="movie-title">10. Toy Story (1995)</span>
-            <div class="quote-box">
-                "To infinity... and beyond!"
-                <button class="audio-btn-inline" onclick="playAudio('To infinity... and beyond!')">🔊</button>
-            </div>
-            <div class="translation-box">"Ao infinito... e além!"</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Preposições (Aula 3):</strong> <code>To</code> e <code>beyond</code> são preposições que indicam direção e lugar, essenciais para a construção de frases.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 11 -->
-        <div class="movie-card">
-            <span class="movie-title">11. O Cavaleiro das Trevas (The Dark Knight, 2008)</span>
-            <div class="quote-box">
-                "Why so serious?"
-                <button class="audio-btn-inline" onclick="playAudio('Why so serious?')">🔊</button>
-            </div>
-            <div class="translation-box">"Por que tão sério?"</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Estrutura de Perguntas (Aula 2):</strong> Esta é uma pergunta abreviada. A forma completa seria "Why are you so serious?". Na fala, é comum omitir partes da frase.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 12 -->
-        <div class="movie-card">
-            <span class="movie-title">12. O Silêncio dos Inocentes (The Silence of the Lambs, 1991)</span>
-            <div class="quote-box">
-                "I <span class="example-word">ate</span> his liver with some fava beans and a nice Chianti."
-                <button class="audio-btn-inline" onclick="playAudio('I ate his liver with some fava beans and a nice Chianti.')">🔊</button>
-            </div>
-            <div class="translation-box">"Eu comi o fígado dele com favas e um bom Chianti."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Past Simple (Irregular):</strong> <code>ate</code> é o passado irregular de "eat". A frase descreve uma ação concluída no passado (<strong>Aula 12</strong>).</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 13 -->
-        <div class="movie-card">
-            <span class="movie-title">13. Uma Questão de Honra (A Few Good Men, 1992)</span>
-            <div class="quote-box">
-                "You <span class="example-word">can't handle</span> the truth!"
-                <button class="audio-btn-inline" onclick="playAudio('You can\'t handle the truth!')">🔊</button>
-            </div>
-            <div class="translation-box">"Você não consegue lidar com a verdade!"</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Modal Verb 'Can't' (Aula 10):</strong> Expressa falta de habilidade ou capacidade.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 14 -->
-        <div class="movie-card">
-            <span class="movie-title">14. De Volta para o Futuro (Back to the Future, 1985)</span>
-            <div class="quote-box">
-                "Roads? Where we<span class="example-word">'re going</span>, we <span class="example-word">don't need</span> roads."
-                <button class="audio-btn-inline" onclick="playAudio('Roads? Where we\'re going, we don\'t need roads.')">🔊</button>
-            </div>
-            <div class="translation-box">"Estradas? Para onde vamos, não precisamos de estradas."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul>
-                    <li><strong>Present Continuous para Futuro (Aula 8):</strong> <code>we're going</code> é usado para descrever um plano futuro imediato.</li>
-                    <li><strong>Present Simple Negativo (Aula 1):</strong> <code>we don't need</code> expressa um fato sobre a situação futura.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Movie 15 -->
-        <div class="movie-card">
-            <span class="movie-title">15. E.T. - O Extraterrestre (E.T., 1982)</span>
-            <div class="quote-box">
-                "E.T. phone home."
-                <button class="audio-btn-inline" onclick="playAudio('E.T. phone home.')">🔊</button>
-            </div>
-            <div class="translation-box">"E.T. telefonar para casa."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Estrutura Simplificada:</strong> A frase omite o sujeito ("I want to...") e usa apenas o verbo e o objeto. É um exemplo de como a linguagem é simplificada em contextos específicos.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 16 -->
-        <div class="movie-card">
-            <span class="movie-title">16. O Iluminado (The Shining, 1980)</span>
-            <div class="quote-box">
-                "Here's Johnny!"
-                <button class="audio-btn-inline" onclick="playAudio('Here\'s Johnny!')">🔊</button>
-            </div>
-            <div class="translation-box">"Aqui está o Johnny!"</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Contrações e Cultura Pop:</strong> <code>Here's</code> é a contração de "Here is". Esta frase se tornou um grande marco da cultura pop.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 17 -->
-        <div class="movie-card">
-            <span class="movie-title">17. Apollo 13 (1995)</span>
-            <div class="quote-box">
-                "Houston, we <span class="example-word">have</span> a problem."
-                <button class="audio-btn-inline" onclick="playAudio('Houston, we have a problem.')">🔊</button>
-            </div>
-            <div class="translation-box">"Houston, nós temos um problema."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Present Simple para Urgência:</strong> O uso do Present Simple (<code>we have</code>) torna a situação imediata e urgente.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 18 -->
-        <div class="movie-card">
-            <span class="movie-title">18. Casablanca (1942)</span>
-            <div class="quote-box">
-                "Here's <span class="example-word">looking</span> at you, kid."
-                <button class="audio-btn-inline" onclick="playAudio('Here\'s looking at you, kid.')">🔊</button>
-            </div>
-            <div class="translation-box">"Um brinde a você, garota."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Gerúndio em Expressão Idiomática:</strong> A estrutura <code>Here's + -ing</code> é uma forma de propor um brinde. É um ótimo exemplo de como os gerúndios são usados em expressões fixas (<strong>Aula 31</strong>).</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 19 -->
-        <div class="movie-card">
-            <span class="movie-title">19. O Senhor dos Anéis (The Lord of the Rings)</span>
-            <div class="quote-box">
-                "My precious."
-                <button class="audio-btn-inline" onclick="playAudio('My precious.')">🔊</button>
-            </div>
-            <div class="translation-box">"Meu precioso."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Adjetivo Possessivo (Aula 3):</strong> <code>My</code> indica posse. A palavra "precious" (precioso) é um adjetivo aqui usado como substantivo.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 20 -->
-        <div class="movie-card">
-            <span class="movie-title">20. Clube da Luta (Fight Club, 1999)</span>
-            <div class="quote-box">
-                "The first rule of Fight Club is: you <span class="example-word">do not talk</span> about Fight Club."
-                <button class="audio-btn-inline" onclick="playAudio('The first rule of Fight Club is: you do not talk about Fight Club.')">🔊</button>
-            </div>
-            <div class="translation-box">"A primeira regra do Clube da Luta é: você não fala sobre o Clube da Luta."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Imperativo / Regra Forte (Aula 19):</strong> O uso do Present Simple <code>you do not talk</code> funciona como uma regra forte e inquebrável.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 21 -->
-        <div class="movie-card">
-            <span class="movie-title">21. Harry Potter e a Pedra Filosofal (2001)</span>
-            <div class="quote-box">
-                "You're a wizard, Harry."
-                <button class="audio-btn-inline" onclick="playAudio('You\'re a wizard, Harry.')">🔊</button>
-            </div>
-            <div class="translation-box">"Você é um bruxo, Harry."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Contrações com 'To Be' (Aula 1):</strong> <code>You're</code> é a contração de "You are". Essencial para a fala natural.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 22 -->
-        <div class="movie-card">
-            <span class="movie-title">22. Tubarão (Jaws, 1975)</span>
-            <div class="quote-box">
-                "You<span class="example-word">'re gonna need</span> a bigger boat."
-                <button class="audio-btn-inline" onclick="playAudio('You\'re gonna need a bigger boat.')">🔊</button>
-            </div>
-            <div class="translation-box">"Você vai precisar de um barco maior."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>'Gonna' para Previsão (Aula 11):</strong> O uso de <code>gonna</code> (going to) aqui é para uma previsão baseada em evidência.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 23 -->
-        <div class="movie-card">
-            <span class="movie-title">23. Os Vingadores (The Avengers, 2012)</span>
-            <div class="quote-box">
-                "I <span class="example-word">am</span> Iron Man."
-                <button class="audio-btn-inline" onclick="playAudio('I am Iron Man.')">🔊</button>
-            </div>
-            <div class="translation-box">"Eu sou o Homem de Ferro."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Present Simple (Identidade):</strong> Uso do verbo "to be" na sua forma completa (<code>I am</code>) para dar ênfase.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 24 -->
-        <div class="movie-card">
-            <span class="movie-title">24. Um Lugar Chamado Notting Hill (1999)</span>
-            <div class="quote-box">
-                "I'm also just a girl, <span class="example-word">standing</span> in front of a boy, <span class="example-word">asking</span> him to love her."
-                <button class="audio-btn-inline" onclick="playAudio('I\'m also just a girl, standing in front of a boy, asking him to love her.')">🔊</button>
-            </div>
-            <div class="translation-box">"Eu também sou apenas uma garota, parada na frente de um garoto, pedindo a ele para amá-la."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Particípio Presente como Adjetivo:</strong> <code>standing</code> e <code>asking</code> funcionam como adjetivos aqui, descrevendo "a girl" (<strong>Aulas 8 e 31</strong>).</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 25 -->
-        <div class="movie-card">
-            <span class="movie-title">25. Jerry Maguire (1996)</span>
-            <div class="quote-box">
-                "You <span class="example-word">had</span> me at 'hello'."
-                <button class="audio-btn-inline" onclick="playAudio('You had me at \'hello\'.')">🔊</button>
-            </div>
-            <div class="translation-box">"Você me ganhou no 'olá'."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Past Simple para Evento Específico:</strong> A ação de "ganhar" aconteceu em um momento muito específico do passado (<strong>Aula 12</strong>).</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 26 -->
-        <div class="movie-card">
-            <span class="movie-title">26. ...E o Vento Levou (1939)</span>
-            <div class="quote-box">
-                "Frankly, my dear, I <span class="example-word">don't give</span> a damn."
-                <button class="audio-btn-inline" onclick="playAudio('Frankly, my dear, I don\'t give a damn.')">🔊</button>
-            </div>
-            <div class="translation-box">"Francamente, minha cara, eu não dou a mínima."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Advérbio + Present Simple Negativo:</strong> <code>Frankly</code> é um advérbio que modifica toda a frase. <code>don't give</code> é uma forte declaração no presente (<strong>Aulas 1 e 24</strong>).</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 27 -->
-        <div class="movie-card">
-            <span class="movie-title">27. Sociedade dos Poetas Mortos (1989)</span>
-            <div class="quote-box">
-                "<span class="example-word">Carpe diem</span>. Seize the day, boys. Make your lives extraordinary."
-                <button class="audio-btn-inline" onclick="playAudio('Carpe diem. Seize the day, boys. Make your lives extraordinary.')">🔊</button>
-            </div>
-            <div class="translation-box">"Carpe diem. Aproveitem o dia, garotos. Façam suas vidas serem extraordinárias."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Imperativo (Aula 19):</strong> <code>Seize</code> (aproveitem) e <code>make</code> (façam) são verbos no imperativo, usados para dar um conselho forte.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 28 -->
-        <div class="movie-card">
-            <span class="movie-title">28. O Lobo de Wall Street (2013)</span>
-            <div class="quote-box">
-                "<span class="example-word">Sell</span> me this pen."
-                <button class="audio-btn-inline" onclick="playAudio('Sell me this pen.')">🔊</button>
-            </div>
-            <div class="translation-box">"Venda-me esta caneta."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Imperativo Direto:</strong> <code>Sell</code> é um comando direto, um exemplo clássico do imperativo em negócios (<strong>Aula 19</strong>).</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 29 -->
-        <div class="movie-card">
-            <span class="movie-title">29. O Diabo Veste Prada (2006)</span>
-            <div class="quote-box">
-                "That's all."
-                <button class="audio-btn-inline" onclick="playAudio('That\'s all.')">🔊</button>
-            </div>
-            <div class="translation-box">"É só isso."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Expressão Idiomática:</strong> <code>That's all</code> é usada para encerrar uma conversa ou lista de instruções de forma abrupta.</li></ul>
-            </div>
-        </div>
-
-        <!-- Movie 30 -->
-        <div class="movie-card">
-            <span class="movie-title">30. O Senhor dos Anéis: As Duas Torres (2002)</span>
-            <div class="quote-box">
-                "There <span class="example-word">is some</span> good in this world, and it's worth <span class="example-word">fighting</span> for."
-                <button class="audio-btn-inline" onclick="playAudio('There is some good in this world, and it\'s worth fighting for.')">🔊</button>
-            </div>
-            <div class="translation-box">"Existe algo de bom neste mundo, e vale a pena lutar por isso."</div>
-            <div class="learning-tip">
-                <h5>Dica de Aprendizagem:</h5>
-                <ul><li><strong>Gerúndio após Expressão:</strong> A expressão <code>worth</code> (valer a pena) é seguida por um gerúndio (<code>fighting</code>). Revisão da <strong>Aula 31</strong>.</li></ul>
-            </div>
-        </div>
-
-        <div class="nota-dica movie-recommendations">
-            <h4>Recomendações de Filmes para Aprender Inglês</h4>
-            <ul>
-                <li><strong>Para Iniciantes:</strong> Animações como <span class="example-word">Finding Nemo</span>, <span class="example-word">Toy Story</span>, e <span class="example-word">Shrek</span> são ótimas. O diálogo é claro e o vocabulário é mais simples.</li>
-                <li><strong>Para Intermediários:</strong> Comédias românticas e dramas como <span class="example-word">Forrest Gump</span>, <span class="example-word">The Devil Wears Prada</span>, e <span class="example-word">Notting Hill</span> usam diálogos mais naturais e cotidianos.</li>
-                <li><strong>Para Avançados:</strong> Filmes com diálogos rápidos e complexos como <span class="example-word">Pulp Fiction</span>, <span class="example-word">The Social Network</span>, e <span class="example-word">Inception</span> são excelentes desafios.</li>
-            </ul>
-        </div>
+        <section class="nota-gramatical">
+            <h4>Dica de Ouro: Por que trechos longos?</h4>
+            <p>Ao ouvir parágrafos inteiros, seu cérebro para de traduzir palavra por palavra e começa a processar <strong>blocos de significado</strong> (chunks). É assim que se alcança a velocidade de compreensão necessária para a fluência real. Não se preocupe se não entender cada detalhe na primeira vez!</p>
+        </section>
 
         <section id="conclusao">
             <h3>Conclusão 🥳</h3>
-            <p>Parabéns por concluir a Aula 47! Você viu como trechos de filmes famosos podem ser uma ferramenta incrível para aprender expressões, entonação e entender o contexto cultural do inglês. Usar o cinema no seu aprendizado torna o processo mais dinâmico e memorável.</p>
-            <p>Continue explorando o mundo dos filmes em inglês e prestando atenção aos diálogos. Quanto mais você se expuser à língua em contextos reais e interessantes, mais rápido e eficientemente você aprenderá.</p>
-            <p>Esta foi a penúltima aula do nosso Módulo 8! Na próxima e última aula, "Teste Seus Conhecimentos (Quiz Final e Fixação)", você terá a chance de revisar e testar tudo o que aprendeu. Prepare-se para o grande final! Good luck! <span class="emoji-small">🌟🎬🏆</span></p>
+            <p>Uau! Você enfrentou alguns dos diálogos mais desafiadores do cinema. Isso é nível intermediário de verdade! Analisar essas falas ajuda a entender como os nativos conectam ideias, usam ênfase e transmitem emoções através de estruturas gramaticais que você já conhece.</p>
+            <p>Na Aula 48: "Inglês para Comunicação Persuasiva e Negociação", vamos aprender como usar essas habilidades para convencer pessoas e fechar acordos.</p>
         </section>
 
         <!-- Botão Navegação Rodapé -->
-        <a href="https://espaco-liberdade.github.io/inglesipa/" class="nav-btn">⬅ Voltar ao Menu</a>
+        <a href="https://espaco-liberdade.github.io/inglesipa/" class="nav-btn">⬅ Voltar ao Menu Principal</a>
     </div>
 
     <!-- SCRIPT DE ÁUDIO OTIMIZADO -->
@@ -627,55 +302,32 @@
             voices = window.speechSynthesis.getVoices();
         }
 
-        loadVoices();
-
         if (window.speechSynthesis.onvoiceschanged !== undefined) {
             window.speechSynthesis.onvoiceschanged = loadVoices;
         }
+        loadVoices();
 
         function playAudio(text) {
             if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
 
                 const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'en-US'; // Define idioma base
-                utterance.rate = 0.85; // Velocidade um pouco mais lenta para aprendizado
+                utterance.lang = 'en-US';
+                utterance.rate = 0.85;
 
-                if (voices.length === 0) voices = window.speechSynthesis.getVoices();
+                if (voices.length === 0) loadVoices();
 
-                // Estratégia de seleção de voz para evitar "sotaque do sistema"
-                // 1. Tenta voz específica "Google US English" (Android) ou "Samantha" (iOS) ou "Premium"
-                // 2. Tenta qualquer voz 'en-US' que não seja localService (geralmente melhores)
-                // 3. Tenta qualquer voz 'en-US'
-                // 4. Tenta qualquer voz que comece com 'en'
-                
+                // Prioriza vozes Premium, Google ou Samantha
                 let targetVoice = voices.find(voice => 
-                    (voice.name.includes('Google') && voice.lang === 'en-US') || 
-                    (voice.name.includes('Premium') && voice.lang === 'en-US') || 
-                    (voice.name.includes('Samantha') && voice.lang === 'en-US')
-                );
+                    (voice.name.includes('Google') || voice.name.includes('Premium') || voice.name.includes('Samantha')) 
+                    && voice.lang.includes('en-US')
+                ) || voices.find(voice => voice.lang === 'en-US');
 
-                if (!targetVoice) {
-                    targetVoice = voices.find(voice => voice.lang === 'en-US' && !voice.localService);
-                }
-
-                if (!targetVoice) {
-                    targetVoice = voices.find(voice => voice.lang === 'en-US');
-                }
-
-                if (!targetVoice) {
-                    targetVoice = voices.find(voice => voice.lang.startsWith('en'));
-                }
-
-                if (targetVoice) {
-                    utterance.voice = targetVoice;
-                    // Força o idioma da voz encontrada para garantir
-                    utterance.lang = targetVoice.lang; 
-                }
+                if (targetVoice) utterance.voice = targetVoice;
 
                 window.speechSynthesis.speak(utterance);
             } else {
-                alert("Desculpe, seu navegador não suporta a reprodução de áudio.");
+                alert("Desculpe, seu navegador não suporta reprodução de áudio.");
             }
         }
     </script>
